@@ -1,7 +1,6 @@
 import React from 'react'
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
 
-
 const Restaurants = () => {
 
     return(
@@ -16,6 +15,7 @@ const Restaurants = () => {
       </CardBody>
     </Card>
   </div>)
+
 
    
 }
