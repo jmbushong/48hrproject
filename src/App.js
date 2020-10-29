@@ -10,11 +10,8 @@ import Weather from './components/Weather/Weather';
 function App() {
   return (
     <div >
-    <Sitebar />
     <NASA />
-    <Restaurants />
-    <Weather />
-    
+   
     </div>
   );
 }
