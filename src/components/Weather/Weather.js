@@ -1,7 +1,22 @@
 import React from 'react'
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
 
+// baseURL = api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={ee6006ca611107ec92d5d3cfd766f153
+// }
+// ee6006ca611107ec92d5d3cfd766f153
+
 const WeatherComponent = () => {
+
+
+    const fetcher = () => {
+        fetch (`api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={ee6006ca611107ec92d5d3cfd766f153`)
+        .then(res => res.json())
+        .then(json => {
+            console.log(json)
+            // setResults(json);
+        })
+    }
+
 
     return (
 
