@@ -6,14 +6,21 @@
 }
 
 h1{
-  text-align: center;
+ 
   letter-spacing: 6px;
   font-family:  'Fredericka the Great', cursive;
-  font-size: 45px !important;
   font-weight: bold;
-
-  
  
+}
+
+.title{
+  text-align: center;
+  width: 60vw;
+  font-size: 6vw;
+}
+
+.city{
+  text-align:center;
 }
 
 .card{
@@ -34,7 +41,8 @@ body{
   background-image:url('./assets/stripes-light.png');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  
  
 }
 
@@ -52,9 +60,132 @@ body{
 }
 
 .fab{
-  font-size: 200px;
+  font-size: 15vw;
   color: rgba(0, 0, 0, 0.514);
-  margin-top:50px;
+
+  position: relative;
+}
+
+.fab:hover{
+  color: orange;
+  transform:translateY(-5px);
+  
+}
+
+.fab:active{
+  transform:translateY(5px);
+}
+
+.cards{
+  margin-top: 50px;
+}
+
+
+
+.landing{
+  display:flex;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-content:center;
+
+}
+
+.heading{
+  margin-top: 5%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f7f7f7;
+  padding: 5%;
+ 
+  
+
+}
+
+.heading:hover{
+  background-color: #f7f7f7;
+  
+}
+
+/* .main{
+  
+  text-align: center;
+
+  
+}
+.city{
+  text-align: center;
+  letter-spacing: 6px;
+  font-family:  'Fredericka the Great', cursive;
+  font-size: 4rem !important;
+  font-weight: bold;
+ 
+  text-align: center;
+  
+
+}
+
+.title{
+  text-align: left;
+  letter-spacing: 6px;
+  font-family:  'Fredericka the Great', cursive;
+  font-size: 4rem !important;
+  font-weight: bold;
+  text-align: center;
+  width: 60vw;
+
+ 
+}
+
+.heading{
+  margin-left:auto;
+  margin-right:auto;
+}
+.card{
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.248);
+  font-family: 'Raleway', sans-serif;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+  
+}
+
+.cardTitle{
+  font-size: 20px;
+}
+
+body{
+  background-image:url('./assets/stripes-light.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  height: 8vh;
+ 
+}
+
+.cardPlacement{
+  justify-content: center;
+  margin-top: 45px;
+  
+  
+}
+
+.homeButton{
+  margin-right: 6px;
+  transform: translateX(-120%);
+}
+
+.fab{
+  font-size: 160px;
+  color: rgba(0, 0, 0, 0.214);
+
+
+
+  
 }
 
 .fab:hover{
@@ -74,3 +205,10 @@ body{
 .title{
   font-size: 4rem !important;
 }
+
+.landing{
+  margin-top:10%;
+  display: flex;
+  
+ 
+} */
