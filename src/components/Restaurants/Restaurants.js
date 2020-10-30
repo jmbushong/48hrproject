@@ -1,45 +1,61 @@
-import React, {useState} from 'react';
-import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
+import React, {useEffect, useState} from 'react';
+import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Row, Col} from 'reactstrap';
 
-const baseURL = '';
+
+const baseURL = 'https://developers.zomato.com/api/v2.1/geocode';
 const key = 'b8dcedfb7841301a3a9cdf35f1feef2f';
-// const lat = '39.8174033';
-// const lon = '-86.1603249';
+//const lat = '39.825567500000005';
+//const lon = '-86.1649924';
 
 
-const Restaurants = () => {
-    const [results, setResults] = useState('');
-    const [lat, setLat] = useState('39.8174033');
-    const [lon, setLon] = useState('-86.1603249');
+const Restaurants = (props) => {
+    const [results, setResults] = useState([]);
+    
+    useEffect(() => {
+        const fetchRestuarantImage = () => {
+            let url = `${baseURL}?api-key=${key}?lat=${props.location?.lat}&lon=${props.location?.long}`;
+    
+            fetch(url, {
+                method:'GET',
+                headers: {'user-key': key}
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setResults(data.nearby_restaurants)
+            })
+            .catch(err => console.log(err));
+        };
 
+        fetchRestuarantImage();
+    },[]);
+        
+    
+    console.log(results);
 
-    const fetchRestuarants = () => {
-        let url = `${baseURL}?api-key=${key}?lat=${lat}$lon=${lon}`;
-
-        fetch(url)
-        .then(res => res.json())
-        .then(resjson => {
-            if(resjson.status === "OK"){
-                return setResults(resjson.restuarants)
-            }else {
-                console.log(resjson.errors);
+    return (
+        <div>
+            <Row>
+            {
+                results.map( r => (
+                    <Col lg="3" md="4" sm="6" className="m-2">
+                    <Card>
+                        <CardImg top width="100%" src={r.restaurant.thumb} alt="restaurant-image" />
+                        <CardBody>
+                            <CardTitle>{r.restaurant.name}</CardTitle>
+                            <CardSubtitle>Name: tuyio</CardSubtitle>
+                            <CardText>Cuisines: rtyui</CardText>
+                            <Button>Button</Button>
+                        </CardBody>
+                    </Card>
+                    </Col>
+                    )
+                )
             }
-        })
-        .catch(err => console.log(err));
-    };
-
-    return(
-    <div>
-        <Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <Button>Button</Button>
-        </CardBody>
-        </Card>
-    </div>
+                    
+                
+            </Row>    
+        </div>
     );
    
 }
