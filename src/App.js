@@ -32,18 +32,18 @@ function App() {
     useEffect(() => {
       getLocation();
     }, [])
-    console.log(pos.lat)
-    console.log(pos.long)
+    // console.log(pos.lat)
+    // console.log(pos.long)
 
   return (
     <div>
-    <Sitebar />
     <div className="cards">
-    <h1>Your current location is Indianapolis, Indiana</h1>
+    <h1>EXPLORE YOUR SURROUNDINGS</h1>
     <br/>
+    <br />
     <Row >
+    <Col sm="4">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
     <Col sm="4"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
-    <Col sm="4">  <NASA lat={pos.lat} long={pos.long}/> </Col>
     <Col sm="4">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
     
    

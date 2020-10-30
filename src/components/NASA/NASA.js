@@ -1,29 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
 
-const NASA= (props) =>{
- const key = 'Ddyvj6Bw0Y7FnWKBfpwzn6llLCb5Z8Y8Hcv8iTqc'
- console.log(props.lat)
-  const fetchImage = () => {
-    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${props.long}&lat=${props.lat}&api_key=${key}`)
-    .then((res)=> res.json())
-    .then((json) => displayJSON(json))}
 
-    function displayJSON(json){
-      console.log(json.url);
-      
-    }
-    fetchImage()
+const NASA= (props) =>{
+
+  const [picture, setPicture]= useState('');
+
+ const key = 'IwdNlEOiyB7TwhRcpPuOdQn80jo3LSB7csAeuY60'
+ const latitude= props.lat;
+ const longitude= props.long;
+
+
+
+  const fetchImage = () => {
+    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=2020-06-01&api_key=${key}`)
+    .then((res)=> res.json())
+    .then((json) => setPicture(json))}
+
+  
+    useEffect(() => {
+      fetchImage();
+      console.log(latitude);
+      console.log(longitude);
+    }, [props.coord]) //I had to add props here because my fetch was running before long & lat could be pulled in
+    console.log(picture)
+    console.log(picture.url)
     
     return(   
          <div>
-        <Card>
-          <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+        <Card className="card">
+          <CardImg top width="100%" src={picture.url} alt="Card image cap" />
           <CardBody>
-            <CardTitle>NASA</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Insert text here</CardText>
-            <Button>Button</Button>
+            <CardTitle className="cardTitle">SATELITE IMAGE </CardTitle>
+            <CardSubtitle></CardSubtitle>
+            <CardText></CardText>
+            
           </CardBody>
         </Card>
       </div>
