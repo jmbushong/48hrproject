@@ -1,7 +1,7 @@
-.cards{
-  margin-top:30px;
-  margin-left: 10px;
-  margin-right: 10px;
+.main{
+  margin-top: 5%;
+  text-align: center;
+
   
 }
 
@@ -11,6 +11,7 @@ h1{
   font-family:  'Fredericka the Great', cursive;
   font-size: 45px !important;
   font-weight: bold;
+
   
  
 }
@@ -39,4 +40,37 @@ body{
 
 .cardPlacement{
   justify-content: center;
+  margin-top: 45px;
+  
+  
+}
+
+.homeButton{
+  margin-left:auto;
+  margin-right: auto;
+
+}
+
+.fab{
+  font-size: 200px;
+  color: rgba(0, 0, 0, 0.514);
+  margin-top:50px;
+}
+
+.fab:hover{
+  color: orange;
+  transform:translateY(-5px);
+  
+}
+
+.fab:active{
+  transform:translateY(5px);
+}
+
+.cards{
+  margin-top: 50px;
+}
+
+.title{
+  font-size: 4rem !important;
 }
