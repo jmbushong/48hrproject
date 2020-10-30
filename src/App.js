@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Row, Col} from 'reactstrap'
 import logo from './logo.svg';
 import './App.css';
@@ -11,7 +11,6 @@ import Sitebar from './components/Sitebar/Sitebar';
 function App() {
   const [pos, setPos] = useState({lat: "", long: ""})
   
-    //add useEffect for getLocation()
 
     const  getLocation = () => {
       if (navigator.geolocation) {
@@ -20,37 +19,39 @@ function App() {
         alert('GeoLocation not enabled');
       }
     }
-
     
     const getCoords = (pos) => {
-      console.log(pos)
+      console.log(pos.lat)
       setPos({
         lat: pos.coords.latitude,
         long: pos.coords.longitude
       })
+  
     }
+    useEffect(() => {
+      getLocation();
+    }, [])
+    // console.log(pos.lat)
+    // console.log(pos.long)
 
   return (
     <div>
-      <Router>
-        <Sitebar />
-      </Router>
+    <div className="cards">
+    <h1>EXPLORE YOUR SURROUNDINGS</h1>
+    <br/>
+    <br />
+    <Row className="cardPlacement">
+    <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
+    <Col sm="3"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
+    <Col sm="3">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
+    
+   
+  </Row>
+  <div>
       
-      <div className="cards">
-        <h1>Your current location is Indianapolis, Indiana</h1>
-        <br/>
-        <Row >
-          <Col sm="4"> <Weather location={pos} /> </Col>
-          <Col sm="4">  <NASA /> </Col>
-          <Col sm="4">  <Restaurants /> </Col>
-        </Row>
-      </div>
-      <div>
-        <br/>
-          <button onClick={getLocation}>Click me</button>
-          <p>lat: {pos.lat}</p>
-          <p>long {pos.long}</p>
-      </div>
+        </div>
+    </div>
+  
     
     </div>
   

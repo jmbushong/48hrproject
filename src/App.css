@@ -1,3 +1,42 @@
 .cards{
-  margin: 60px;
+  margin-top:30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+
+h1{
+  text-align: center;
+  letter-spacing: 6px;
+  font-family:  'Fredericka the Great', cursive;
+  font-size: 45px !important;
+  font-weight: bold;
+  
+ 
+}
+
+.card{
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.248);
+  font-family: 'Raleway', sans-serif;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+  
+}
+
+.cardTitle{
+  font-size: 20px;
+}
+
+body{
+  background-image:url('./assets/stripes-light.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
+
+.cardPlacement{
+  justify-content: center;
 }
