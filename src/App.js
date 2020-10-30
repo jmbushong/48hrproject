@@ -41,10 +41,10 @@ function App() {
     <h1>EXPLORE YOUR SURROUNDINGS</h1>
     <br/>
     <br />
-    <Row >
-    <Col sm="4">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
-    <Col sm="4"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
-    <Col sm="4">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
+    <Row className="cardPlacement">
+    <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
+    <Col sm="3"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
+    <Col sm="3">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
     
    
   </Row>

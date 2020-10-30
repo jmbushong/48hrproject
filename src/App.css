@@ -1,17 +1,22 @@
 .cards{
-  margin: 60px;
+  margin-top:30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
 }
 
 h1{
   text-align: center;
-  letter-spacing: 20px;
+  letter-spacing: 6px;
   font-family:  'Fredericka the Great', cursive;
-  font-size: 50px !important;
+  font-size: 45px !important;
   font-weight: bold;
+  
+ 
 }
 
 .card{
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.548);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.248);
   font-family: 'Raleway', sans-serif;
 }
 
@@ -30,4 +35,8 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
  
+}
+
+.cardPlacement{
+  justify-content: center;
 }
