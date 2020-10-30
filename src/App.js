@@ -4,9 +4,8 @@ import {Row, Col} from 'reactstrap'
 import './App.css';
 import NASA from './components/NASA/NASA';
 import Weather from './components/Weather/Weather';
+import {BrowserRouter as Router } from 'react-router-dom';
 import Restaurants from './components/Restaurants/Restaurants';
-
-
 
 
 function App() {
