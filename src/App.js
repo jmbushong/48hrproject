@@ -1,37 +1,19 @@
 import React, {useEffect, useState} from 'react'
 import {Row, Col} from 'reactstrap'
-import logo from './logo.svg';
+
 import './App.css';
 import NASA from './components/NASA/NASA';
 import Weather from './components/Weather/Weather';
 import Restaurants from './components/Restaurants/Restaurants';
-import Sitebar from './components/Sitebar/Sitebar'
+
 
 
 
 function App() {
+  const locationKey= 'prj_live_pk_ee962ff8986f661f6a8037800a4e5e279c6cbac2'
   const [pos, setPos] = useState({lat: "", long: ""})
   const[button, setButton]= useState(false);
-
-  
-
-
- const showCards=() =>{
-   return (button === true ? 
-  <div className="cards"><h1>Indianapolis, Indiana</h1>
-  <Row className="cardPlacement" >
-  <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
-  <Col sm="3"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
-  <Col sm="3">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
-</Row>
-  </div>
-  
-: <div className= "main" ><h1 className="title">EXPLORE YOUR </h1> <h1 className="title"> SURROUNDINGS </h1> 
-<a className="homeButton" onClick={(e)=> setButton(true)}><i class="fab fa-wpexplorer"></i>
-</a></div>
-   
- )
- }
+  const[locationName, setLocationName]= useState('');
  
   
 
@@ -56,17 +38,47 @@ function App() {
     }, [])
 
     
-    // console.log(pos.lat)
-    // console.log(pos.long)
+    const fetchLocation = () => {
+      fetch(`https://api.radar.io/v1/geocode/reverse?coordinates=${pos.lat},${pos.long}`, {
+        method: 'GET',
+        headers: new Headers({
+          'Authorization': 'prj_live_pk_ee962ff8986f661f6a8037800a4e5e279c6cbac2'
+        })
+      })
+      .then((res)=> res.json())
+      .then((json) => setLocationName(json))}
+      
+      useEffect(() => {
+        fetchLocation();
+        console.log(pos.lat);
+        console.log(pos.long);
+      }, [pos]) 
 
+      const showCards=() =>{
+        return (button === true ? 
+       <div className="cards"><h1 className="city">{locationName.addresses[0].city}, {locationName.addresses[0].state}</h1>
+       <Row className="cardPlacement" >
+       <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
+       <Col sm="3"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
+       <Col sm="3">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
+     </Row>
+       </div>
+       
+     : <div className= "main" >
+     <div className="landing">
+     <div className="heading"> <h1 className="title">EXPLORE YOUR SURROUNDINGS </h1> <div className="homeButton"> <a onClick={(e)=> setButton(true)}><i className="fab fa-wpexplorer"></i></a></div></div>
+      
+  
+     </div>
+     </div>
+        
+      )
+      }
   return (
  
     <div >
- 
     
     {showCards()}
-    
-    
   
     </div>
   

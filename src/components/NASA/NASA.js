@@ -13,10 +13,9 @@ const NASA= (props) =>{
 
 
   const fetchImage = () => {
-    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=2020-06-01&api_key=${key}`)
+    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=2020-06-01&dim=0.15&api_key=${key}`)
     .then((res)=> res.json())
     .then((json) => setPicture(json))}
-
   
     useEffect(() => {
       fetchImage();
