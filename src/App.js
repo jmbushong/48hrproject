@@ -4,10 +4,9 @@ import logo from './logo.svg';
 import './App.css';
 import NASA from './components/NASA/NASA';
 import Weather from './components/Weather/Weather';
+import {BrowserRouter as Router } from 'react-router-dom';
 import Restaurants from './components/Restaurants/Restaurants';
-import Sitebar from './components/Sitebar/Sitebar'
-
-
+import Sitebar from './components/Sitebar/Sitebar';
 
 function App() {
   const [pos, setPos] = useState({lat: "", long: ""})
