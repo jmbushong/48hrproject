@@ -43,7 +43,7 @@ function App() {
     <br />
     <Row >
     <Col sm="4">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
-    <Col sm="4"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
+    <Col sm="4"> <Weather coord={pos} lat={pos.lat} long={pos.long} /> </Col> 
     <Col sm="4">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
     
    
