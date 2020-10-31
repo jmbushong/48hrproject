@@ -53,14 +53,16 @@ const rest = () => {
     
     
      
-    <Col sm="3">  <RestaurantPieces coord={pos} lat={pos.lat} long={pos.long} viewRestaurants={toggle}/> </Col>
+    
     
    
   
   <br/>
   { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
-  <div>
+  </div>
+  </div>
   
+    )
 }
   
     
@@ -86,13 +88,14 @@ const rest = () => {
        <Row className="cardPlacement" >
        <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
        <Col sm="3"> <Weather coord={pos} lat={pos.lat} long={pos.long} /> </Col> 
+       <Col sm="3">  <RestaurantPieces coord={pos} lat={pos.lat} long={pos.long} viewRestaurants={toggle}/> </Col>
        {rest()}
      </Row>
        </div>
        
      : <div className= "main" >
      <div className="landing">
-     <div className="heading"> <h1 className="title">EXPLORE YOUR SURROUNDINGS </h1> <div className="homeButton"> <a onClick={(e)=> setButton(true)}><i className="fab fa-wpexplorer"></i></a></div></div>
+     <div className="heading"> <h1 className="title">EXPLORE YOUR SURROUNDINGS </h1><div className="homeButton"> <a onClick={(e)=> setButton(true)}><i className="fab fa-wpexplorer"></i></a></div></div>
       
   
      </div>
