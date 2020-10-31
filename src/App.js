@@ -7,10 +7,11 @@ import Weather from './components/Weather/Weather';
 import {BrowserRouter as Router } from 'react-router-dom';
 import Restaurants from './components/Restaurants/Restaurants';
 import Sitebar from './components/Sitebar/Sitebar';
+import RestaurantPieces from './components/Restaurants/RestaurantPieces';
 
 function App() {
   const [pos, setPos] = useState({lat: "", long: ""})
-  
+  const [showRestaurants, setShowRestaurants] = useState(false);
 
     const  getLocation = () => {
       if (navigator.geolocation) {
@@ -34,6 +35,8 @@ function App() {
     // console.log(pos.lat)
     // console.log(pos.long)
 
+    const toggle = () => setShowRestaurants(!showRestaurants);
+
   return (
     <div>
     <div className="cards">
@@ -43,10 +46,12 @@ function App() {
     <Row className="cardPlacement">
     <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
     <Col sm="3"> <Weather lat={pos.lat} long={pos.long} /> </Col> 
-    <Col sm="3">  <Restaurants lat={pos.lat} long={pos.long}/> </Col>
+    <Col sm="3">  <RestaurantPieces lat={pos.lat} long={pos.long} viewRestaurants={toggle}/> </Col>
     
    
   </Row>
+  <br/>
+  { showRestaurants && (<Restaurants lat={pos.lat} long={pos.long}/>)}
   <div>
       
         </div>
