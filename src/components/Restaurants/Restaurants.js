@@ -71,9 +71,9 @@ const Restaurants = (props) => {
                     )
                 )
             }
-            </Row>   
-            <RestaurantInfo toggle = {toggle} modal = {modal} restaurant = {modalData} />
-        </div>
+        //     </Row>   
+        //     <RestaurantInfo toggle = {toggle} modal = {modal} restaurant = {modalData} />
+        // </div>
     );
    
 }
