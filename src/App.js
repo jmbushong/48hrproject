@@ -47,14 +47,7 @@ const rest = () => {
 
     return (
     <div>
-    <div className="cards">
-    
-   
-    
-    
-     
-    
-    
+    <div className="card">
    
   
   <br/>
