@@ -3,10 +3,10 @@ import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Row,
 import RestaurantInfo from "./RestaurantInfo.js";
 import Starrating from './Starrating'
 
-const baseURL = 'https://developers.zomato.com/api/v2.1/geocode';
-const key = 'b8dcedfb7841301a3a9cdf35f1feef2f';
-//const lat = '39.825567500000005';
-//const lon = '-86.1649924';
+// const baseURL = 'https://developers.zomato.com/api/v2.1/geocode/';
+// const key = 'b8dcedfb7841301a3a9cdf35f1feef2f';
+const key= 'a55eb505f4034d2062efda3dae74a1d4'
+
 
 
 const Restaurants = (props) => {
@@ -14,12 +14,15 @@ const Restaurants = (props) => {
     
     useEffect(() => {
         const fetchRestuarantImage = () => {
-            let url = `${baseURL}?api-key=${key}?lat=${props.lat}&lon=${props.long}`;
+            let url = `https://developers.zomato.com/api/v2.1/geocode?lat=${props.lat}&lon=${props.long}`;
     
             fetch(url, {
                 method:'GET',
-                headers: {'user-key': key}
-            })
+                headers: new Headers(
+                    {'user-key': key
+                }
+                    
+            )})
             .then(response => response.json())
             .then(data => {
                 console.log(data);

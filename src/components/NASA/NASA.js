@@ -42,7 +42,7 @@ const NASA= (props) =>{
           <CardBody>
             <CardTitle className="cardTitle">SATELITE IMAGE </CardTitle>
             <CardSubtitle></CardSubtitle>
-            <CardText></CardText>
+            <CardText>This is a bird's-eye view of your current location!</CardText>
             
           </CardBody>
         </Card>

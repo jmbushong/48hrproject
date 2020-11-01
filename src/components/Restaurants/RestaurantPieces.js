@@ -23,7 +23,7 @@ const RestaurantPieces = (props) => {
           <CardTitle>Top Restaurants Near You</CardTitle>
           <CardSubtitle>Hungry?</CardSubtitle>
           <CardText>Having a hard time finding a place to eat. Look no further. Your present location currently has about 9 places to choose from. See below link!</CardText>
-         <Button onClick={viewRestaurants}>See Restaurants</Button>
+         <Button onClick={viewRestaurants} >See Restaurants</Button>
         </CardBody>
         </Card>
    

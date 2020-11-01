@@ -29,7 +29,7 @@ h1 {
   cursor: pointer;
 }
 
-.landing:hover {
+/* .landing:hover {
   color: orange;
   transform: translateY(-5px);
 }
@@ -41,7 +41,7 @@ h1 {
 
 .landing:active {
   transform: translateY(5px);
-}
+} */
 
 .heading {
   margin-top: 5%;
@@ -73,6 +73,41 @@ h1 {
   position: relative;
 }
 
+.locationSelection{
+  display:flex;
+justify-content: center;
+transform: translateX(-5%);
+transition: all .2s;
+}
+
+h5{
+  margin-left:10px;
+  margin-right: 10px;
+}
+
+.locationSelection form{
+  display: flex;
+}
+
+.currentLoc{
+  cursor: pointer;
+  background-color: rgb(255, 255, 194);
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.411);
+}
+
+.currentLoc:hover{
+  
+  transform: translateY(-5px);
+  transition: all .2s;
+
+}
+
+.currentLoc:active{
+  transform: translateY(3px);
+  transition: all .2s;
+}
+
 /* MAIN PAGE WITH THREE CARDS */
 
 .city {
@@ -82,6 +117,7 @@ h1 {
 .card {
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.248);
   font-family: "Raleway", sans-serif;
+ 
 }
 
 .card:hover {
@@ -99,4 +135,30 @@ h1 {
 
 .cards {
   margin-top: 50px;
+}
+
+.go{
+  border: 1px solid black;
+  height: 95%;
+}
+
+
+
+.card-text{
+  font-size: 12px;
+}
+
+.card-img-top{
+  height: 200px;
+}
+
+.card{
+  height: 420px;
+}
+
+.restaurantResults{
+  margin-top: 100px;
+  background-color: white;
+  margin-left: 50px;
+  width:80vw;
 }
