@@ -17,6 +17,7 @@ function App() {
   const [locationName, setLocationName] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [results, setResults] =useState('');
+  const [resToggle, setResToggle]= useState(false)
 
   
   //This function will grab the user's location (lat & long) when run
@@ -31,7 +32,6 @@ function App() {
 
   //This function sets the user's location to the variable pos
   const getCoords = (pos) =>{
-    
     setPos({ lat: pos.coords.latitude, long: pos.coords.longitude });
   }
    
@@ -49,16 +49,18 @@ function App() {
   //Is the rest function necessary? Or could we just add this code on line 98?
   const rest = () => {
     return (
-      <div>
-        <div className="card">
+      <div className= 'restaurantResults'>
+  
+        
           <br />
+          
           {showRestaurants && (
             <Restaurants coord={pos} lat={pos.lat} long={pos.long} />
-          )}
-        </div>
+          )} 
+     
       </div>
-    );
-  };
+    );}
+
 
   //This fetch grabs the coordinates stored in pos and converts them to a city and state name
 
@@ -77,7 +79,9 @@ function App() {
       .catch((error) => console.log("error"));
   };
 
-  //This useEffect runs the above fetch when the component loads & when the variable pos is updated. In this case you'll see a message in the console saying that our fetch initially failed. This is because the fetch ran before the user's location was logged. The fetch then runs a second time once the location info has been updated.
+  console.log(`Location Name:' ${locationName}`)
+
+  //This useEffect runs the above fetch when the component loads & when the variable results is updated. In this case you'll see a message in the console saying that our fetch initially failed. This is because the fetch ran before the user's location was logged. The fetch then runs a second time once the variable results has been updated. This is the variable linked to the search bar api results. 
 
   useEffect(() => {
     try {
@@ -87,7 +91,7 @@ function App() {
     }
   }, [results]);
 
-  console.log(locationName);
+  
 
   //This is the fetch for the autocomplete search bar
   const fetchSearchBar = () => {
@@ -102,6 +106,7 @@ function App() {
       .catch((error) => console.log("error"));
   };
 
+  //This useEffect runs the Autocomplete Search Bar API & Stores the lat/long from those results to the POS variable. It runs when the component first loads and when the user types in the search bar
   useEffect(() => {
     try {
       fetchSearchBar();
@@ -111,18 +116,14 @@ function App() {
     }
   }, [postalCode]);
 
+  //This is the function that actually takes the json results frm the Autocomplete Search Bar API & stores it into the pos variable
   const getSearchCoords= ()=>{
     setPos({lat:results.addresses[0].latitude, long:results.addresses[0].longitude})
   }
   
-
-
-  console.log(results);
-  // console.log(pos);
-  // console.log(pos.lat);
-  // console.log(results.addresses[0].latitude)
   
-  //This function controls the switch from our landing page to the main page. This is controlled through logic that utilizes an onClick, useState boolean values and a ternary.
+  
+  //This function controls the switch from our landing page to the main page to restaurant listings. This is controlled through logic that utilizes an onClick, useState boolean values and a ternary.
 
   const showCards = () => {
     return button === 'current' ? (
@@ -149,9 +150,10 @@ function App() {
             />{" "}
           </Col>
           {rest()}
+          
         </Row>
       </div>
-    ) : (
+    ) :(
       <div className="main">
         <div className="landing">
           <div className="heading">
@@ -183,13 +185,13 @@ function App() {
           </button>
         </div>
       </div>
-    );
+    )
   };
 
   console.log(pos)
   //This is the RETURN for APP.JS. This is where the function showCards() is called and printed to the DOM
 
-  return <div>{showCards()}</div>;
-}
+  return ( <div> {showCards()}  </div>
+  )}
 
 export default App;
