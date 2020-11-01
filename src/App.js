@@ -7,7 +7,7 @@ import Weather from './components/Weather/Weather';
 import {BrowserRouter as Router } from 'react-router-dom';
 import Restaurants from './components/Restaurants/Restaurants';
 import RestaurantPieces from './components/Restaurants/RestaurantPieces';
-import Climate from './components/Weather/Climate';
+// import Climate from './components/Weather/Climate';
 
 
 function App() {
@@ -89,7 +89,7 @@ const rest = () => {
        <Row className="cardPlacement" >
        <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
        <Col sm="3"> <Weather coord={pos} lat={pos.lat} long={pos.long} /> </Col>
-       <Col sm="3"> <Climate coord={pos} lat={pos.lat} long={pos.long} /></Col> 
+       {/* <Col sm="3"> <Climate coord={pos} lat={pos.lat} long={pos.long} /></Col>  */}
        <Col sm="3">  <RestaurantPieces coord={pos} lat={pos.lat} long={pos.long} viewRestaurants={toggle}/> </Col>
        {rest()}
      </Row>
