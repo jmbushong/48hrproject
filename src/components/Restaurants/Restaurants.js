@@ -1,20 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Row, Col} from 'reactstrap';
 import RestaurantInfo from "./RestaurantInfo.js";
-import Starrating from './Starrating'
+import Starrating from './Starrating';
 
 const baseURL = 'https://developers.zomato.com/api/v2.1/geocode';
 const key = 'b8dcedfb7841301a3a9cdf35f1feef2f';
 //const lat = '39.825567500000005';
 //const lon = '-86.1649924';
 
-
 const Restaurants = (props) => {
     const [results, setResults] = useState([]);
     
     useEffect(() => {
         const fetchRestuarantImage = () => {
-            let url = `${baseURL}?api-key=${key}?lat=${props.lat}&lon=${props.long}`;
+            let url = `${baseURL}?lat=${props.lat}&lon=${props.long}`;
     
             fetch(url, {
                 method:'GET',
@@ -31,7 +30,7 @@ const Restaurants = (props) => {
         fetchRestuarantImage();
     },[props]);
     
-    let staticImgUrl = 'https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60';
+    let staticImgUrl = 'https://images.unsplash.com/photo-1544461772-722f499fa2a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80';
 
     // function that takes a string, checks if it's empty. If empty, return some static string, else return the input string
     const placeHolderImg = (thumbUrl) => {
@@ -46,33 +45,35 @@ const Restaurants = (props) => {
   
     const toggle = () => setModal(!modal);
 
+    const openModal = (restaurant) => {
+        setModalData(restaurant);
+        setModal(true);  
+    }
+
     return (
-        <div className="container-fluid">
+        <div className="container" id="results">
+        <h3 className="titleForSearchResults">See Restaurant search results</h3>
             <Row>
             {
-                results?.map( (r, index) => (
-                    <Col sm="6" md="4" lg="3" className="m-2" id={`col${index++}`}>
-                        <Card>
-                            {/* <CardImg top width="100%" src={placeHolderImg(r.restaurant.thumb)} alt="restaurant-image" /> */}
+                
+                    results?.map( (r) => (
+                    <Col sm="6" md="4" lg="3" className="m-2" id={r.restaurant.res_id}>
+                        <Card style={{ width: '18rem' }}>
+                            <CardImg src={placeHolderImg(r.restaurant.thumb)} alt="restaurant-image" className="thumbSize" />
                             <CardBody>
-                                <CardTitle>{r.restaurant.name}</CardTitle>
-                                <CardSubtitle className="text-muted">Consumer Rating: {r.restaurant.user_rating.aggregate_rating} [<b>{r.restaurant.user_rating.rating_text}</b>]</CardSubtitle>
-                                <CardText>Location:  {r.restaurant.location.address}</CardText>
-                                <Button onClick={()=>{setModalData(r.restaurant);setModal(true);}}>More Information</Button>
+                                <CardTitle className="restaurantName">{r.restaurant.name}</CardTitle>
+                                <CardSubtitle className="text-muted restaurantPiecesSubtitle">Consumer Rating: {r.restaurant.user_rating.aggregate_rating} [<strong>{r.restaurant.user_rating.rating_text}</strong>]</CardSubtitle>
+                                <CardText className="restaurantPiecesCardText">Location:  {r.restaurant.location.address}</CardText>
+                                <Button onClick={()=>{openModal(r.restaurant);}}>More Information</Button>
                             </CardBody>
-                            <CardBody>
-                                <CardTitle>{r.restaurant.name}</CardTitle>
-                                <CardSubtitle className="text-muted">Consumer Rating: {r.restaurant.user_rating.aggregate_rating} [<b>{r.restaurant.user_rating.rating_text}</b>]</CardSubtitle>
-                                <CardText>Location:  {r.restaurant.location.address}</CardText>
-                                <Button onClick={()=>{setModalData(r.restaurant);setModal(true);}}>More Information</Button>
-                            </CardBody>
+                           
                         </Card>
                     </Col>
                     )
                 )
             }
             </Row>   
-            <RestaurantInfo toggle = {toggle} modal = {modal} restaurant = {modalData} />
+            <RestaurantInfo toggle ={toggle} modal ={modal} restaurant ={modalData} />
         </div>
     );
    

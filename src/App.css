@@ -1,12 +1,9 @@
 .main{
   margin-top: 5%;
   text-align: center;
-
-  
 }
 
 h1{
- 
   letter-spacing: 6px;
   font-family:  'Fredericka the Great', cursive;
   font-weight: bold;
@@ -30,7 +27,6 @@ h1{
 
 .card:hover{
   transform: translateY(-10px);
-  
 }
 
 .cardTitle{
@@ -42,34 +38,27 @@ body{
   background-position: center;
   background-size: cover;
   background-repeat: repeat-y;
-  
- 
 }
 
 .cardPlacement{
   justify-content: center;
   margin-top: 45px;
-  
-  
 }
 
 .homeButton{
   margin-left:auto;
   margin-right: auto;
-
 }
 
 .fab{
   font-size: 15vw;
   color: rgba(0, 0, 0, 0.514);
-
   position: relative;
 }
 
 .fab:hover{
   color: orange;
   transform:translateY(-5px);
-  
 }
 
 .fab:active{
@@ -80,8 +69,6 @@ body{
   margin-top: 50px;
 }
 
-
-
 .landing{
   display:flex;
   width: 80%;
@@ -89,7 +76,6 @@ body{
   margin-left: auto;
   justify-content: center;
   align-content:center;
-
 }
 
 .heading{
@@ -99,14 +85,35 @@ body{
   align-items: center;
   background-color:#f7f7f7;
   padding: 5%;
- 
-  
-
 }
 
 .heading:hover{
   background-color: #f7f7f7;
+}
+
+.titleForSearchResults {
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.restaurantName {
+  font-family: 'Grenze Gotisch', cursive;
+  font-weight: 900;
+  font-size: 1.5em;
   
+}
+
+.restaurantPiecesSubtitle {
+  font-family: 'Turret Road', cursive;
+  color: rgb(114, 124, 119);
+}
+
+.restaurantPiecesCardTitle {
+  font-size: 1.5em;
+}
+
+.restaurantPiecesCardText {
+  font-weight: lighter;
+  color: rgb(68, 69, 70);
 }
 
 /* .main{
@@ -212,3 +219,4 @@ body{
   
  
 } */
+

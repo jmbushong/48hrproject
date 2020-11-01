@@ -7,7 +7,7 @@ import Weather from './components/Weather/Weather';
 import {BrowserRouter as Router } from 'react-router-dom';
 import Restaurants from './components/Restaurants/Restaurants';
 import RestaurantPieces from './components/Restaurants/RestaurantPieces';
-
+import Climate from './components/Weather/Climate';
 
 
 function App() {
@@ -58,6 +58,7 @@ const rest = () => {
    
   
   <br/>
+  {/* if showRestaurant is true and Restaurant component is true, then show */}
   { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
   </div>
   </div>
@@ -87,7 +88,8 @@ const rest = () => {
        <div className="cards"><h1 className="city">{locationName.addresses[0].city}, {locationName.addresses[0].state}</h1>
        <Row className="cardPlacement" >
        <Col sm="3">  <NASA coord={pos} lat={pos.lat} long={pos.long}/> </Col>
-       <Col sm="3"> <Weather coord={pos} lat={pos.lat} long={pos.long} /> </Col> 
+       <Col sm="3"> <Weather coord={pos} lat={pos.lat} long={pos.long} /> </Col>
+       <Col sm="3"> <Climate coord={pos} lat={pos.lat} long={pos.long} /></Col> 
        <Col sm="3">  <RestaurantPieces coord={pos} lat={pos.lat} long={pos.long} viewRestaurants={toggle}/> </Col>
        {rest()}
      </Row>
