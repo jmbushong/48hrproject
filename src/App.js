@@ -57,7 +57,7 @@ function App() {
   {/* if showRestaurant is true and Restaurant component is true, then show */}
   { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
   </div>
-  </div>
+    );}
 
   //This fetch grabs the coordinates stored in pos and converts them to a city and state name
 
