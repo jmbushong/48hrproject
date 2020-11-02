@@ -124,7 +124,6 @@ getWeather();
         </CardBody>
       </Card> */}
           {/* </div>
-
           {showCards()}
         </div>
         {/* end of main div */}
