@@ -1,3 +1,187 @@
-.cards{
-  margin: 60px;
+/* STYLING FOR ENTIRE APP */
+body {
+  background-image: url("./assets/stripes-light.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat-y;
 }
+
+h1 {
+  letter-spacing: 6px;
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+}
+
+/* LANDING PAGE */
+
+.main {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.landing {
+  display: flex;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+
+
+.heading {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 5%;
+}
+
+
+
+.cardPlacement{
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.heading:hover {
+  background-color: #f7f7f7;
+}
+
+.title {
+  text-align: center;
+  width: 60vw;
+  font-size: 6vw;
+
+}
+
+.homeButton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fab {
+  font-size: 15vw;
+  color: rgba(0, 0, 0, 0.514);
+  position: relative;
+}
+
+h5{
+  margin-left:10px;
+  margin-right: 10px;
+}
+
+.locationSelection {
+  display: flex;
+  justify-content: center;
+  transform: translateX(-6%);
+}
+
+.titleForSearchResults {
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.restaurantName {
+  font-family: 'Grenze Gotisch', cursive;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.restaurantPiecesSubtitle {
+  font-family: 'Turret Road', cursive;
+  color: rgb(114, 124, 119);
+}
+
+.restaurantPiecesCardTitle {
+  font-size: 1.5em;
+}
+
+.restaurantPiecesCardText {
+  font-weight: lighter;
+  color: rgb(68, 69, 70);
+}
+
+.currentLoc{
+  cursor: pointer;
+  background-color: rgb(255, 255, 194);
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.411);
+}
+
+.currentLoc:hover{
+  
+  transform: translateY(-5px);
+  transition: all .2s;
+
+}
+
+.currentLoc:active{
+  transform: translateY(3px);
+  transition: all .2s;
+
+}
+
+/* MAIN PAGE WITH THREE CARDS */
+
+.city {
+  text-align: center;
+}
+
+.card {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.248);
+  font-family: "Raleway", sans-serif;
+ 
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cardTitle {
+  font-size: 20px;
+}
+
+.cardPlacement {
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.cards {
+  margin-top: 50px;
+}
+
+.go{
+  border: 1px solid black;
+  height: 95%;
+}
+
+
+
+ .card-text{
+  font-size: 12px;
+}
+
+.card-img-top{
+  height: 180px;
+} */
+/* 
+.card{
+  height: 420px;
+} */
+
+.restaurantResults{
+  margin-top: 100px;
+  background-color: white;
+  margin-left: 50px;
+  width:80vw;
+}
+
+
+/* .results{
+  position: absolute;
+  top:0;
+  background:white;
+} */
