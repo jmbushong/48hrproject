@@ -6,8 +6,6 @@ import Weather from "./components/Weather/Weather";
 import { BrowserRouter as Router } from "react-router-dom";
 import Restaurants from "./components/Restaurants/Restaurants";
 import RestaurantPieces from "./components/Restaurants/RestaurantPieces";
-import Climate from "./components/Weather/Climate"
-
 
 // This is our main component that controls the landing page & main page
 
@@ -129,7 +127,7 @@ function App() {
       <div className="cards">
         <h1 className="city">
         {/* error shows if locationName is empty. This makes locationName.address undefined. Check to see if locationName.address is not undefined before printing information.*/}
-          {locationName.addresses !== undefined && `${locationName.addresses[0].city}, ${locationName?.addresses[0]?.state}`}
+          {locationName.addresses !== undefined ? `${locationName.addresses[0].city}, ${locationName?.addresses[0]?.state}` : ''}
         </h1>
         <Row className="cardPlacement">
           <Col sm="3">
@@ -139,10 +137,6 @@ function App() {
           <Col sm="3">
             {" "}
             <Weather coord={pos} lat={pos.lat} long={pos.long} />{" "}
-          </Col>
-          <Col sm="3">
-            {" "}
-            <Climate coord={pos} lat={pos.lat} long={pos.long} />{" "}
           </Col>
           <Col sm="3">
             {" "}
