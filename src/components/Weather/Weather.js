@@ -19,7 +19,8 @@ const Weather = (props) => {
 //   const [ fahrenheit, setFahrenheit] = useState('')
 //   const [ celsius, setCelsius] = useState('')
 
-    const key = 'e41714bc7677fdb9ee66328adbb2ef0c'
+    // const key = 'e41714bc7677fdb9ee66328adbb2ef0c'
+    const key = '39f3730b34fe49d842602e2754374ec2'
     const latitude= props.lat;
     const longitude= props.long;
 
@@ -101,9 +102,9 @@ getWeather();
       <CardImg top width="100%" src="https://openweather.co.uk/storage/app/media/we-are-pleased-announce-our-new-statistical-weather-data-api-now-available.png" alt="Card image cap" />
       <CardBody>
         <CardTitle>TEMPERATURE</CardTitle>
-        <CardSubtitle>{button === true ? 'Fahrenheit': 'Celsius'}</CardSubtitle>
+        {/* <CardSubtitle>{button === true ? 'Fahrenheit' : 'Celsius'}</CardSubtitle> */}
         <CardText>
-          {button === true ? fahrenheit : celsius} 
+          {button === true ? fahrenheit + '°F' : celsius + '°C'} 
           {/* {button === true ? celsius : fahrenheit} */}
         </CardText>
         <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>Temps</Button>
