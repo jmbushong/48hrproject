@@ -59,7 +59,7 @@ const Restaurants = (props) => {
     return (
 
         <div className="container" id="results">
-        <h3 className="titleForSearchResults">See Restaurant search results</h3>
+        <h3 className="titleForSearchResults">See Restaurant Search Results</h3>
 
             <Row>
             {

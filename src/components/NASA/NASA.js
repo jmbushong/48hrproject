@@ -37,7 +37,7 @@ const NASA= (props) =>{
     //This is the return for NASA.js. This posts the NASA bootstrap card to the DOM
     return(   
          <div>
-        <Card className="card">
+        <Card className="card NASA">
           <CardImg top width="100%" src={picture.url} alt="Card image cap" />
           <CardBody>
             <CardTitle className="cardTitle">SATELITE IMAGE </CardTitle>

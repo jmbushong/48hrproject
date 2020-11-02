@@ -125,9 +125,9 @@ function App() {
     console.log(locationName);
     return button === 'current' ? (
       <div className="cards">
-        <h1 className="city">
-        {/* error shows if locationName is empty. This makes locationName.address undefined. Check to see if locationName.address is not undefined before printing information.*/}
-          {locationName.addresses !== undefined ? `${locationName.addresses[0].city}, ${locationName?.addresses[0]?.state}` : ''}
+
+        <h1 className="city">{locationName.addresses !== undefined ? `${locationName.addresses[0].city}, ${locationName.addresses[0].state}` : "location not set"}
+      
         </h1>
         <Row className="cardPlacement">
           <Col sm="3">
