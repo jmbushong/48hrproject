@@ -125,8 +125,8 @@ function App() {
   const showCards = () => {
     return button === 'current' ? (
       <div className="cards">
-        <h1 className="city">
-          {locationName.addresses[0].city}, {locationName.addresses[0].state}
+        <h1 className="city">{locationName.addresses !== undefined ? `${locationName.addresses[0].city}, ${locationName.addresses[0].state}` : "location not set"}
+      
         </h1>
         <Row className="cardPlacement">
           <Col sm="3">
