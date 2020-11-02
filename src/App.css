@@ -74,8 +74,10 @@ h5{
   margin-right: 10px;
 }
 
-.locationSelection form{
+.locationSelection {
   display: flex;
+  justify-content: center;
+  transform: translateX(-6%);
 }
 
 .titleForSearchResults {
@@ -158,14 +160,14 @@ h5{
 
 
 
-.card-text{
+ .card-text{
   font-size: 12px;
 }
 
-/* .card-img-top{
-  height: 200px;
-}
-
+.card-img-top{
+  height: 180px;
+} */
+/* 
 .card{
   height: 420px;
 } */
