@@ -46,7 +46,7 @@ function App() {
   //TBA- More explanation to come.
   const toggle = () => setShowRestaurants(!showRestaurants);
 
-  //Is the rest function necessary? Or could we just add this code on line 98?
+ 
   const rest = () => {
     return (
       <div className= 'restaurantResults'>

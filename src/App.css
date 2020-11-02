@@ -29,19 +29,7 @@ h1 {
   cursor: pointer;
 }
 
-/* .landing:hover {
-  color: orange;
-  transform: translateY(-5px);
-}
 
-.landing:hover i {
-  color: orange;
-  transform: translateY(-5px);
-}
-
-.landing:active {
-  transform: translateY(5px);
-} */
 
 .heading {
   margin-top: 5%;
@@ -162,3 +150,9 @@ h5{
   margin-left: 50px;
   width:80vw;
 }
+
+/* .results{
+  position: absolute;
+  top:0;
+  background:white;
+} */

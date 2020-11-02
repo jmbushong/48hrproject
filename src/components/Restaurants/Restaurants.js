@@ -50,7 +50,8 @@ const Restaurants = (props) => {
     const toggle = () => setModal(!modal);
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid results" >
+        <h2>Results</h2>
             <Row>
             {
                 results?.map( (r, index) => (
