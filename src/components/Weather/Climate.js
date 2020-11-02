@@ -54,6 +54,7 @@ const Climate = (props) => {
         const celsiusTemp = (Math.floor(fahrenheitTemp -32) * 95/9);
 
 
+
     return(
         <div>
 
@@ -61,10 +62,7 @@ const Climate = (props) => {
         <CardImg top width="100%" src={placeHolderImage} alt="Card image cap" />
         <CardBody>
           <CardTitle>Weather</CardTitle>
-          <CardSubtitle>{temperature === undefined ? '' : temperature.weather[0].main}
-          
-          </CardSubtitle>
-          <CardText>{button === true ? `${fahrenheitTemp}°F`: `${celsiusTemp}°Celsius`}. Feels like: {temperature.main.feels_like} </CardText>
+
           <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>Toggle for Celsius/Fahrenheit</Button>
         </CardBody>
       </Card>
@@ -75,3 +73,4 @@ const Climate = (props) => {
 }
 
 export default Climate;
+

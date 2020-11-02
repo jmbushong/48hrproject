@@ -2,16 +2,10 @@ import React from "react"
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import { Router, Route, Link, Switch} from 'react-router-dom';
 
-
-
-
-
 const RestaurantPieces = (props) => {
 
-    const {viewRestaurants} =props;
-    
+    const {viewRestaurants} = props;
 
-    
     return(
         <div>
           
@@ -31,10 +25,9 @@ const RestaurantPieces = (props) => {
         </Card>
         
    
+
         </div>
     )
-
-
 }
 
 export default RestaurantPieces;

@@ -19,7 +19,9 @@ const Weather = (props) => {
 //   const [ fahrenheit, setFahrenheit] = useState('')
 //   const [ celsius, setCelsius] = useState('')
 
+
     const key = '39f3730b34fe49d842602e2754374ec2'
+
     const latitude= props.lat;
     const longitude= props.long;
 
@@ -57,11 +59,12 @@ getWeather();
          
         </CardText>
         <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>{button ===true? 'Click for Celsius': 'Click for Fahrenheit' }</Button>
+
       </CardBody>
     </Card>
       </div>
     )
-            
+
  }  
     
 
