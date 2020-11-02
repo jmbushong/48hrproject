@@ -8,92 +8,66 @@ import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from
 // }
 // ee6006ca611107ec92d5d3cfd766f153
 
+
+
 const Weather = (props) => {
+
 
   const [currentWeather, setCurrentWeather]= useState('');
   const[button, setButton]= useState(false);
 
-  const [ fahrenheit, setFahrenheit] = useState('')
-  const [ celsius, setCelsius] = useState('')
-
-  //add a useState here. Use default false
-  const showCards=() =>{
-    return (
-        // const toggleTemp = () => {
-        //     <div><a className="homeButton" onClick={(e)=> setButton(true)}>Fahrenheit
-        //      </a></div> : <div><a className="homeButton" onClick={(e)=> setButton(true)}>Celsius</a></div>
-        //      }
-        button === true ? 
-   <div>
-        <a onClick={(e)=> setButton(false)}>Goodbye</a>
-   </div>
-   
- :  <div> 
-     {/* <div>
-      <Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>TEMPERATURE</CardTitle>
-          <CardSubtitle>Fahrenheit</CardSubtitle>
-          <CardText>
-            {props.lat}
-            {props.long}
-          </CardText>
-          <Button>{showCards()}</Button>
-        </CardBody>
-      </Card>
-    </div> */}
-        <a onClick={(e)=> setButton(true)}>Celsius</a>
-    </div>
-  )
-  }
+//   const [ fahrenheit, setFahrenheit] = useState('')
+//   const [ celsius, setCelsius] = useState('')
 
 
-    const key = '2e207a6f28aa4466916a861930cf982c'
+    const key = '39f3730b34fe49d842602e2754374ec2'
+
     const latitude= props.lat;
     const longitude= props.long;
 
-    const getWeather = (props) => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
-        .then((res)=> res.json())                                
-        .then((json) => console.log(json))}
-    
+  const getWeather = (props) => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
+    .then((res)=> res.json())                                
+    .then((json) => setCurrentWeather(json.main.temp))    
+    .catch((err) => {
+        console.log(err)
+    })
 
-useEffect(() => {
-    getWeather();
-    console.log(latitude);
-    console.log(longitude);
-  }, [props.coord]) //I had to add props here because my fetch was running before long & lat could be pulled in
-  console.log(currentWeather)
-  console.log(currentWeather.url)
+}
 
-    return (
+console.log(currentWeather);
 
-        <div className="main">
-            <div className="mainDiv">
 
-            <div>
+        let fahrenheit = Math.round((currentWeather - 273.15) * 1.8 + 32);
+  
+        let celsius = Math.round(currentWeather-273.15);
+
+
+getWeather();
+
+
+
+          return (
+      <div className="main">
       <Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.
-            {props.lat}
-            {props.long}
-          </CardText>
-          <Button></Button>
-        </CardBody>
-      </Card>
-    </div>
+      <CardImg top  className="imageweather" width="100%" src="https://openweather.co.uk/storage/app/media/we-are-pleased-announce-our-new-statistical-weather-data-api-now-available.png" alt="Card image cap" />
+      <CardBody>
+        <CardTitle>TEMPERATURE</CardTitle>
+        
+        <CardText className="number">
+          {button === true ? fahrenheit + '°F'
+          : celsius + '°F'} 
+         
+        </CardText>
+        <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>{button ===true? 'Click for Celsius': 'Click for Fahrenheit' }</Button>
 
-            </div>
-
-        </div>
+      </CardBody>
+    </Card>
+      </div>
     )
-    }
+
+ }  
     
 
 
 export default Weather;
-

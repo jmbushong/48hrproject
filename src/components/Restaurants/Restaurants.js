@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Row, Col} from 'reactstrap';
 import RestaurantInfo from "./RestaurantInfo.js";
-import Starrating from './Starrating';
+
 
 // const baseURL = 'https://developers.zomato.com/api/v2.1/geocode/';
 // const key = 'b8dcedfb7841301a3a9cdf35f1feef2f';
@@ -14,9 +14,9 @@ const Restaurants = (props) => {
     useEffect(() => {
         const fetchRestuarantImage = () => {
 
-            let url = `https://developers.zomato.com/api/v2.1/geocode?lat=${props.lat}&lon=${props.long}`;
+            const url = `https://developers.zomato.com/api/v2.1/geocode?lat=${props.lat}&lon=${props.long}`;
 
-    
+            // key goes in the header detail
             fetch(url, {
                 method:'GET',
                 headers: new Headers(
@@ -35,6 +35,7 @@ const Restaurants = (props) => {
         fetchRestuarantImage();
     },[props]);
     
+    // placeholder for restaurants with no thumbs/images
     let staticImgUrl = 'https://images.unsplash.com/photo-1544461772-722f499fa2a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80';
 
     // function that takes a string, checks if it's empty. If empty, return some static string, else return the input string
@@ -58,7 +59,7 @@ const Restaurants = (props) => {
     return (
 
         <div className="container" id="results">
-        <h3 className="titleForSearchResults">See Restaurant search results</h3>
+        <h3 className="titleForSearchResults">See Restaurant Search Results</h3>
 
             <Row>
             {
