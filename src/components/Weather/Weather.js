@@ -37,61 +37,7 @@ console.log(currentWeather);
 // let fahrenheit = (kelvinTemp-273.15*1.8+32);
 // let celsius = kelvinTemp - 273.15;
 
-  //add a useState here. Use default false
-//   const showCards=() =>{
-//     return (
-//         // const toggleTemp = () => {
-//         //     <div><a className="homeButton" onClick={(e)=> setButton(true)}>Fahrenheit
-//         //      </a></div> : <div><a className="homeButton" onClick={(e)=> setButton(true)}>Celsius</a></div>
-//         //      }
-//         button === true ? 
-//    <div>
-//        <Card>
-//         <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-//         <CardBody>
-//           <CardTitle>TEMPERATURE</CardTitle>
-//           <CardSubtitle>Celsius</CardSubtitle>
-//           //call the converter function above in the card.
-//           <CardText> 
-//               {/* (if celsius == true src={currentWeather.main.temp}) */}
-//             {props.lat}
-//             {props.long}
-//           </CardText>
-//           <Button onClick={(e)=> getWeather()} onClick={(e)=> {setButton(false)}}>Temps</Button>
-//         </CardBody>
-//       </Card>
-        
-//    </div>
-   
-//  :  <div> 
-//      <div>
-//       <Card>
-//         <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-//         <CardBody>
-//           <CardTitle>TEMPERATURE</CardTitle>
-//           <CardSubtitle>{converter}</CardSubtitle>
-//           <CardText>
-//             {props.lat}
-//             {props.long}
-//           </CardText>
-//           <Button onClick={(e)=> setButton(true)}>Temps</Button>
-//         </CardBody>
-//       </Card>
-//     </div>
-//         {/* <a onClick={(e)=> setButton(true)}></a> */}
-//     </div>
-//   )
-//   }
-
-
-    // const key = '2e207a6f28aa4466916a861930cf982c'
-    //The above key is the best one
-    // const key = 'd4492a0a42ede84a6dfb03bbf117d6c6'
-    // const key = 'e41714bc7677fdb9ee66328adbb2ef0c'
-    // const key = 'e41714bc7677fdb9ee66328adbb2ef0c'
-    // const latitude= props.lat;
-    // const longitude= props.long;
-
+  
     // const getWeather = (props) => {
     //     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
     //     .then((res)=> res.json())                                
@@ -105,8 +51,9 @@ console.log(currentWeather);
    
     // const converter = (currentWeather) => {
 
-        let fahrenheit = (currentWeather-273.15*1.8+32);
-        let celsius = currentWeather-273.15;
+        let fahrenheit = Math.round((currentWeather - 273.15) * 1.8 + 32);
+        // let fahrenheit = (currentWeather-273.15)*1.8+32;
+        let celsius = Math.round(currentWeather-273.15);
 
     //     if(button === false){
     //         return <p>{fahrenheit}</p>
@@ -117,11 +64,6 @@ console.log(currentWeather);
     //     console.log(celsius)
     //     console.log(currentWeather)
     // }
-     
-// useEffect(() => {
-//     converter();
-// }, [button]);
-    
 
 // useEffect(() => {
 //     getWeather();
@@ -153,15 +95,10 @@ getWeather();
 // }
 
 
-//   <span className={"fas fa-snowflake"} />
-    // return (
-    //   <div className="main">
-    //     <div className="mainDiv">
-        //   <div>
           return (
       <div className="main">
       <Card>
-      <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+      <CardImg top width="100%" src="https://openweather.co.uk/storage/app/media/we-are-pleased-announce-our-new-statistical-weather-data-api-now-available.png" alt="Card image cap" />
       <CardBody>
         <CardTitle>TEMPERATURE</CardTitle>
         <CardSubtitle>{button === true ? 'Fahrenheit': 'Celsius'}</CardSubtitle>
