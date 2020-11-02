@@ -144,6 +144,11 @@ h5{
   font-size: 20px;
 }
 
+.card-title{
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+
+}
 .cardPlacement {
   justify-content: center;
   margin-top: 45px;
@@ -185,3 +190,11 @@ h5{
   top:0;
   background:white;
 } */
+
+.number{
+  font-size: 30px;
+}
+
+.NASA{
+  height: 390px;
+}
