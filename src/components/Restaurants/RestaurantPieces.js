@@ -24,7 +24,7 @@ const RestaurantPieces = (props) => {
           <CardTitle className="restaurantPiecesCardTitle">Top Restaurants Near You</CardTitle>
           <CardSubtitle className="restaurantPiecesSubtitle">Hungry?</CardSubtitle>
           <CardText className="restaurantPiecesCardText">Having a hard time finding a place to eat. Look no further. Your present location currently has about 9 places to choose from. See below link!</CardText>
-         <Button onClick={viewRestaurants}><a href="props.#results">See Restaurants</a></Button>
+         <Button onClick={viewRestaurants}>See Restaurants</Button>
 
         </CardBody>
         </Card>
