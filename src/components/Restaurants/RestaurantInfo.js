@@ -17,13 +17,13 @@ const RestaurantInfo = (props) => {
           <ModalBody>
             <dl className='text-center'>
                 <dt>Cuisines: </dt>
-                <dd>{props.restaurant.cuisines}</dd>
+                <dd>{restaurant?.cuisines}</dd>
                 <dt>Average cost for two:</dt>
                 <dd>${restaurant?.average_cost_for_two}</dd>
                 <dt>Delivery: </dt>
-                <dd>{(restaurant?.R?.has_menu_status.delivery === -1 ) ? "No" : "Yes" }</dd>
+                <dd>{(restaurant?.R?.has_menu_status.delivery === 1 ) ? "Yes" : "No" }</dd>
                 <dt>Takeaway: </dt>
-                <dd>{(restaurant.R?.has_menu_status.takeaway === -1 ) ? "No" : "Yes" }</dd>
+                <dd>{(restaurant?.R?.has_menu_status.takeaway === 1 ) ? "Yes" : "No" }</dd>
             </dl>
           </ModalBody>
           <ModalFooter>

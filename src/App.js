@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Restaurants from "./components/Restaurants/Restaurants";
 import RestaurantPieces from "./components/Restaurants/RestaurantPieces";
 
+
 // This is our main component that controls the landing page & main page
 
 function App() {
@@ -49,18 +50,14 @@ function App() {
  
   const rest = () => {
     return (
-      <div className= 'restaurantResults'>
-  
-        
-          <br />
-          
-          {showRestaurants && (
-            <Restaurants coord={pos} lat={pos.lat} long={pos.long} />
-          )} 
-     
-      </div>
-    );}
 
+    <div className='restaurantResults'>
+    
+  <br/>
+  {/* if showRestaurant is true and Restaurant component is true, then show */}
+  { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
+  </div>
+    );}
 
   //This fetch grabs the coordinates stored in pos and converts them to a city and state name
 
@@ -91,7 +88,6 @@ function App() {
     }
   }, [results]);
 
-  
 
   //This is the fetch for the autocomplete search bar
   const fetchSearchBar = () => {
@@ -120,6 +116,7 @@ function App() {
   const getSearchCoords= ()=>{
     setPos({lat:results.addresses[0].latitude, long:results.addresses[0].longitude})
   }
+
   
   
   

@@ -40,6 +40,13 @@ h1 {
   padding: 5%;
 }
 
+
+
+.cardPlacement{
+  justify-content: center;
+  margin-top: 45px;
+}
+
 .heading:hover {
   background-color: #f7f7f7;
 }
@@ -48,6 +55,7 @@ h1 {
   text-align: center;
   width: 60vw;
   font-size: 6vw;
+
 }
 
 .homeButton {
@@ -61,13 +69,6 @@ h1 {
   position: relative;
 }
 
-.locationSelection{
-  display:flex;
-justify-content: center;
-transform: translateX(-5%);
-transition: all .2s;
-}
-
 h5{
   margin-left:10px;
   margin-right: 10px;
@@ -75,6 +76,30 @@ h5{
 
 .locationSelection form{
   display: flex;
+}
+
+.titleForSearchResults {
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.restaurantName {
+  font-family: 'Grenze Gotisch', cursive;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.restaurantPiecesSubtitle {
+  font-family: 'Turret Road', cursive;
+  color: rgb(114, 124, 119);
+}
+
+.restaurantPiecesCardTitle {
+  font-size: 1.5em;
+}
+
+.restaurantPiecesCardText {
+  font-weight: lighter;
+  color: rgb(68, 69, 70);
 }
 
 .currentLoc{
@@ -94,6 +119,7 @@ h5{
 .currentLoc:active{
   transform: translateY(3px);
   transition: all .2s;
+
 }
 
 /* MAIN PAGE WITH THREE CARDS */
@@ -136,13 +162,13 @@ h5{
   font-size: 12px;
 }
 
-.card-img-top{
+/* .card-img-top{
   height: 200px;
 }
 
 .card{
   height: 420px;
-}
+} */
 
 .restaurantResults{
   margin-top: 100px;
@@ -150,6 +176,7 @@ h5{
   margin-left: 50px;
   width:80vw;
 }
+
 
 /* .results{
   position: absolute;
