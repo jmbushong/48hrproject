@@ -20,10 +20,12 @@ const RestaurantPieces = (props) => {
         <Card>
         <CardImg top width="100%" src="https://images.unsplash.com/photo-1534824394572-a24ff25bbb5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1493&q=80/318x180.svg" alt="Card image cap" />
         <CardBody>
+
           <CardTitle className="restaurantPiecesCardTitle">Top Restaurants Near You</CardTitle>
           <CardSubtitle className="restaurantPiecesSubtitle">Hungry?</CardSubtitle>
           <CardText className="restaurantPiecesCardText">Having a hard time finding a place to eat. Look no further. Your present location currently has about 9 places to choose from. See below link!</CardText>
          <Button onClick={viewRestaurants}><a href="props.#results">See Restaurants</a></Button>
+
         </CardBody>
         </Card>
    
