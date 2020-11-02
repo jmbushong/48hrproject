@@ -53,9 +53,10 @@ getWeather();
       <CardImg top  className="imageweather" width="100%" src="https://openweather.co.uk/storage/app/media/we-are-pleased-announce-our-new-statistical-weather-data-api-now-available.png" alt="Card image cap" />
       <CardBody>
         <CardTitle>TEMPERATURE</CardTitle>
-        <CardSubtitle>{button === true ? 'Fahrenheit': 'Celsius'}</CardSubtitle>
+        
         <CardText className="number">
-          {button === true ? fahrenheit : celsius} 
+          {button === true ? fahrenheit + '°F'
+          : celsius + '°F'} 
          
         </CardText>
         <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>{button ===true? 'Click for Celsius': 'Click for Fahrenheit' }</Button>
