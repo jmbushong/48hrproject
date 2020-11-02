@@ -81,13 +81,15 @@ h5{
   margin-right: 10px;
 }
 
-.locationSelection form{
+.locationSelection {
   display: flex;
+  justify-content: center;
+  transform: translateX(-6%)
 }
 
-.titleForSearchResults {
+/* .titleForSearchResults {
   font-family: 'Grenze Gotisch', cursive;
-}
+} */
 
 .restaurantName {
   font-family: 'Grenze Gotisch', cursive;
@@ -101,7 +103,7 @@ h5{
 }
 
 .restaurantPiecesCardTitle {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .restaurantPiecesCardText {

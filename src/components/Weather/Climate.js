@@ -8,13 +8,15 @@ const units = 'imperial';
 
 const Climate = (props) => {
     const [temperature, setTemperature] = React.useState({});
+    const[button, setButton]= React.useState(false);
 
     useEffect(() => {
         const fetchWeatherImage = () => {
-        let url = `${baseURL}?lat=${props.lat}&lon=${props.lon}&appid=${key}`
+        let url = `${baseURL}?lat=${props.lat}&lon=${props.long}&appid=${key}&units=${units}`;
     
         fetch(url)
-            .then(data => setTemperature(data))
+            .then(data => data.json())
+            .then(jsonified => setTemperature(jsonified))
             .catch(err => console.log(err));
         }
         
@@ -25,17 +27,43 @@ const Climate = (props) => {
 
         let showMe = true;
 
+    // const FahrenheitToCelsius = () => {
+    //     let fahrenheitTemp = temperature.main.temp;
+    //     let celsiusTemp = (Math.floor(fahrenheitTemp -32) * 95/9);
+    //     return celsiusTemp;
+    // }
+
+    const placeHolderImage = () => {
+        let clouds;
+        let clear;
+        let rain;
+
+        let cloudyImage = "../../src/assets/cloudy.png";
+        let clearImage = "../../src/assets/clear";
+        let rainImage = "../../src/assets/rain";
+        let snowImage = "../../src/assets/snow";
+        let condition = temperature.weather[0].main;
+    
+        return (condition === clouds) ? cloudyImage 
+        : (condition === clear) ? clearImage
+        : (condition === rain) ? rainImage
+        :snowImage; 
+    }
+
+    const fahrenheitTemp = temperature.main === undefined ? '' : temperature.main.temp;
+        const celsiusTemp = (Math.floor(fahrenheitTemp -32) * 95/9);
+
 
     return(
         <div>
 
-<Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+    <Card>
+        <CardImg top width="100%" src={placeHolderImage} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle>Weather</CardTitle>
+          <CardSubtitle>{temperature === undefined ? '' : temperature?.weather[0]?.main}</CardSubtitle>
+          <CardText>{button === true ? `${fahrenheitTemp}°F`: `${celsiusTemp}°Celsius`}. Feels like: {temperature.main.feels_like} </CardText>
+          <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>Toggle for Celsius/Fahrenheit</Button>
         </CardBody>
       </Card>
            { showMe && (<Card></Card>)}
@@ -45,3 +73,6 @@ const Climate = (props) => {
 }
 
 export default Climate;
+
+
+
