@@ -29,14 +29,7 @@ h1 {
   cursor: pointer;
 }
 
-/* .landing:hover {
-  color: orange;
-  transform: translateY(-5px);
-}
 
-.landing:active {
-  transform: translateY(5px);
-} */
 
 .heading {
   margin-top: 5%;
@@ -84,7 +77,7 @@ h5{
 .locationSelection {
   display: flex;
   justify-content: center;
-  transform: translateX(-6%)
+  transform: translateX(-6%);
 }
 
 /* .titleForSearchResults {
@@ -167,14 +160,14 @@ h5{
 
 
 
-.card-text{
+ .card-text{
   font-size: 12px;
 }
 
-/* .card-img-top{
-  height: 200px;
-}
-
+.card-img-top{
+  height: 180px;
+} */
+/* 
 .card{
   height: 420px;
 } */
@@ -186,3 +179,9 @@ h5{
   width:80vw;
 }
 
+
+/* .results{
+  position: absolute;
+  top:0;
+  background:white;
+} */
