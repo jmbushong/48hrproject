@@ -17,7 +17,7 @@ function App() {
   const [locationName, setLocationName] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [results, setResults] =useState('');
-  const [resToggle, setResToggle]= useState(false)
+  
 
   
   //This function will grab the user's location (lat & long) when run
