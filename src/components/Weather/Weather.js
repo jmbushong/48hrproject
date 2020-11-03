@@ -56,7 +56,7 @@ getWeather();
         
         <CardText className="number">
           {button === true ? fahrenheit + '°F'
-          : celsius + '°F'} 
+          : celsius + '°C'} 
          
         </CardText>
         <Button onClick={(e)=> {button === true ? setButton(false): setButton(true)}}>{button ===true? 'Click for Celsius': 'Click for Fahrenheit' }</Button>
