@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Restaurants from "./components/Restaurants/Restaurants";
 import RestaurantPieces from "./components/Restaurants/RestaurantPieces";
 
-
 // This is our main component that controls the landing page & main page
 
 function App() {
@@ -44,19 +43,19 @@ function App() {
     getLocation();
   }, []);
 
-  //TBA- More explanation to come.
+  //This function changes the toggles value of showRestaurants
   const toggle = () => setShowRestaurants(!showRestaurants);
 
  
   const rest = () => {
     return (
 
-    <div className='restaurantResults'>
+      <div className='restaurantResults'>
     
-  <br/>
-  {/* if showRestaurant is true and Restaurant component is true, then show */}
-  { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
-  </div>
+      <br/>
+        {/* if showRestaurant is true and Restaurant component is true, then show restaurant component*/}
+        { showRestaurants && (<Restaurants coord={pos} lat={pos.lat} long={pos.long}/>)}
+      </div>
     );}
 
   //This fetch grabs the coordinates stored in pos and converts them to a city and state name
@@ -123,10 +122,12 @@ function App() {
   //This function controls the switch from our landing page to the main page to restaurant listings. This is controlled through logic that utilizes an onClick, useState boolean values and a ternary.
 
   const showCards = () => {
+    console.log(locationName);
     return button === 'current' ? (
       <div className="cards">
-        <h1 className="city">
-          {locationName.addresses[0].city}, {locationName.addresses[0].state}
+
+        <h1 className="city">{locationName.addresses !== undefined ? `${locationName.addresses[0].city}, ${locationName.addresses[0].state}` : "location not set"}
+      
         </h1>
         <Row className="cardPlacement">
           <Col sm="3">
