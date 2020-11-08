@@ -4,8 +4,9 @@ import "./App.css";
 import NASA from "./components/NASA/NASA";
 import Weather from "./components/Weather/Weather";
 import { BrowserRouter as Router } from "react-router-dom";
-import Restaurants from "./components/Restaurants/Restaurants";
-import RestaurantPieces from "./components/Restaurants/RestaurantPieces";
+// import Restaurants from "./components/Restaurants/Restaurants";
+// import RestaurantPieces from "./components/Restaurants/RestaurantPieces";
+import {Restaurants, RestaurantPieces} from "./components/Restaurants";
 
 // This is our main component that controls the landing page & main page
 
