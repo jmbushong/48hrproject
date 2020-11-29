@@ -16,10 +16,11 @@ const RestaurantPieces = (props) => {
         <CardBody>
 
 
-          <CardTitle className="restaurantPiecesCardTitle">TOP RESTAURANTS NEAR YOU</CardTitle>
+          <CardTitle className="restaurantPiecesCardTitle">TOP RESTAURANTS </CardTitle>
           <CardSubtitle className="restaurantPiecesSubtitle">Hungry?</CardSubtitle>
-          <CardText className="restaurantPiecesCardText">Having a hard time finding a place to eat. Look no further. Your present location currently has about 9 places to choose from. See below link!</CardText>
-         <Button onClick={viewRestaurants}>See Restaurants</Button>
+          <CardText className="restaurantPiecesCardText">Having a hard time finding a place to eat? Click the link below to see nearby restaurants. </CardText>
+          <br></br>
+         <Button className="cardButton" onClick={viewRestaurants}>See Restaurants</Button>
 
         </CardBody>
         </Card>

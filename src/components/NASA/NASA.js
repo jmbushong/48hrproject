@@ -15,7 +15,7 @@ const NASA= (props) =>{
 
 //NASA Satelite Image Fetch
   const fetchImage = () => {
-    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&dim=0.15&api_key=${key}`)
+    fetch(`https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=2020-8-20&dim=0.15&api_key=${key}`)
     .then((res)=> res.json())
     .then((json) => setPicture(json))  //In this line I am storing my json data in the variable named picture (defined above in useState)
     .catch((error) => console.log('error'))
